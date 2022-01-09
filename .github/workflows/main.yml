@@ -6,7 +6,8 @@ name: CI
 on:
   schedule:
   # * is a special character in YAML so you have to quote this string
-  - cron:  '*/6 * * * *'
+  # - cron:  '*/6 * * * *' # cada 6min
+  - cron:  '0 0 * * *'  # todos los dias a las 00
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
