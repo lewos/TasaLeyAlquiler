@@ -33,3 +33,16 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+          
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.x
+      - name: Restore dependencies
+        run: dotnet restore
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Test
+        run: dotnet run
+          
