@@ -13,7 +13,10 @@ namespace TasaLeyAlquiler
                     .AddUserSecrets<Program>()
                     .Build();
 
-                var gitAuthToken = config.GetSection("GH_TOKEN");
+
+                var gitAuthToken = Environment.GetEnvironmentVariable("GH_TOKEN");
+
+                //var gitAuthToken = config.GetSection("GH_TOKEN");
                 if (gitAuthToken == null)
                     throw new Exception("sigue null");
                 var repoId = config.GetSection("GH_REPO_ID");
@@ -34,7 +37,7 @@ namespace TasaLeyAlquiler
 
                 var gitHubService = new GitHubService();
 
-                var user = await gitHubService.GetCurrentUser(gitAuthToken.Value);
+                var user = await gitHubService.GetCurrentUser(gitAuthToken);
 
                 ////Console.WriteLine($"Request disponibles: {gitHubService.CheckRate()}");
 
