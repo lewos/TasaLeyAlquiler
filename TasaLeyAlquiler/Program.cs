@@ -24,7 +24,7 @@ namespace TasaLeyAlquiler
                     Console.WriteLine($"tiene un valor");
                 }
 
-                var gitAuthToken = Environment.GetEnvironmentVariable("GH__TOKEN");
+                var gitAuthToken = Environment.GetEnvironmentVariable("GHTOKEN");
 
                 //var gitAuthToken = config.GetSection("GH_TOKEN");
                 if (gitAuthToken == null) 
