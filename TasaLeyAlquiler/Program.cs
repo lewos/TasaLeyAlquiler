@@ -13,6 +13,17 @@ namespace TasaLeyAlquiler
                     .AddUserSecrets<Program>()
                     .Build();
 
+
+                var prueba = Environment.GetEnvironmentVariable("PRUEBA");
+                if (prueba == null)
+                {
+                    throw new Exception("prueba sigue null");
+                }
+                else 
+                {
+                    Console.WriteLine($"tiene un valor");
+                }
+
                 var gitAuthToken = Environment.GetEnvironmentVariable("GH_TOKEN");
 
                 //var gitAuthToken = config.GetSection("GH_TOKEN");
