@@ -73,8 +73,6 @@ namespace TasaLeyAlquiler
         {
             try
             {
-                var newFileText = "";
-                //TODO update si la tasa de algun dia cambio
                 foreach (var k in dict)
                 {
                     if (currentFileText.Contains($"|{k.Key}"))
@@ -82,7 +80,8 @@ namespace TasaLeyAlquiler
                         Console.WriteLine($"{k.Key}");
                         //ver el valor de la tasa y ver si es diferente, hacer el update
                         var index = currentFileText.IndexOf($"|{k.Key} | ") + $"|{k.Key} | ".Length;
-                        var lastIndex = currentFileText.Substring(index, 10).IndexOf('|');
+                        var cant = Math.Min(10, currentFileText.Length - index);
+                        var lastIndex = currentFileText.Substring(index, cant).IndexOf('|');
                         var tasa = currentFileText.Substring(index, lastIndex);
 
                         Console.WriteLine($"{index};{lastIndex}{tasa}");
