@@ -42,7 +42,9 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build --no-restore -v n
+      - name: pwd
+        run: pwd
       - name: Test
         run: dotnet run
           
