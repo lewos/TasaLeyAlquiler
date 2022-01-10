@@ -31,10 +31,8 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
       - name: Build
-        run: dotnet build --no-restore -v n
-      - name: pwd
-        run: pwd        
-      - name: Test
+        run: dotnet build --no-restore       
+      - name: Run
         run: |
           cd TasaLeyAlquiler
           dotnet run 
