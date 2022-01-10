@@ -36,4 +36,8 @@ jobs:
         run: |
           cd TasaLeyAlquiler
           dotnet run 
-          
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_REPO_ID: ${{ secrets.GH_REPO_ID }}
+          GH_FILE_NAME: ${{ secrets.GH_FILE_NAME }}
+          GH_BRANCH: ${{ secrets.GH_BRANCH }}
