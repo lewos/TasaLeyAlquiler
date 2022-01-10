@@ -77,14 +77,11 @@ namespace TasaLeyAlquiler
                 {
                     if (currentFileText.Contains($"|{k.Key}"))
                     {
-                        Console.WriteLine($"{k.Key}");
                         //ver el valor de la tasa y ver si es diferente, hacer el update
                         var index = currentFileText.IndexOf($"|{k.Key} | ") + $"|{k.Key} | ".Length;
                         var cant = Math.Min(10, currentFileText.Length - index);
                         var lastIndex = currentFileText.Substring(index, cant).IndexOf('|');
                         var tasa = currentFileText.Substring(index, lastIndex);
-
-                        Console.WriteLine($"{index};{lastIndex}{tasa}");
 
                         if (!tasa.Trim().Equals(k.Value))
                         {
