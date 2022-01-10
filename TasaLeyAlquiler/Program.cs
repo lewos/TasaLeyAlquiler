@@ -13,12 +13,13 @@ namespace TasaLeyAlquiler
                     .AddUserSecrets<Program>()
                     .Build();
 
-
                 var gitAuthToken = Environment.GetEnvironmentVariable("GH_TOKEN");
 
                 //var gitAuthToken = config.GetSection("GH_TOKEN");
-                if (gitAuthToken == null)
+                if (gitAuthToken == null) 
+                {
                     throw new Exception("sigue null");
+                }
                 var repoId = config.GetSection("GH_REPO_ID");
                 var branchToUpdate = config.GetSection("GH_BRANCH");
                 var fileName = config.GetSection("GH_FILE_NAME");
